@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax_start</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+
+</head>
+<body>
+    <script>
+        function fun() {
+            $.ajax({
+                url: "ajaxServlet",
+                type: "POST",
+                data: {"username": "Jack", "age": "23"},
+                success: function (result) {
+                    alert(result);
+                },
+                error:function () {
+                    alert("Something went wrong");
+                },
+                dataType:"text"
+            });
+        }
+    </script>
+    <input type="button" value="Async" onclick="fun();">
+    <input type="text">
+</body>
+</html>

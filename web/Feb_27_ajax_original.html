@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<script>
+    function fun() {
+        var xmlhttp;
+        if(window.XMLHttpRequest){
+            xmlhttp = new XMLHttpRequest();
+        }
+        else{
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        //true Asynchronous
+        //false: Synchronous
+        xmlhttp.open("GET", "ajaxServlet?username=tom", true);
+        xmlhttp.send();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                alert(xmlhttp.responseText);
+            }
+        }
+    }
+</script>
+
+<input type="button" value="Async" onclick="fun();">
+<input type="text">
+
+</body>
+</html>
