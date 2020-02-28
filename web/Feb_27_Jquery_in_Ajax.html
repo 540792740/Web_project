@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax_JQuery</title>
+</head>
+<body>
+<script>
+    function fun(){
+        $.get("ajaxServlet", {username:"rose"}, function (data) {
+            alert(data);
+        }, "text");
+    }
+</script>
+
+
+<input type="button" value="Async" onclick="fun();">
+<input type="text">
+</body>
+</html>
