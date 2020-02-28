@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Ajax_JQuery</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+
 </head>
 <body>
 <script>
@@ -11,10 +13,21 @@
             alert(data);
         }, "text");
     }
+
+    function po(){
+        $.post("ajaxServlet", {username:"rose"}, function (data) {
+            alert(data);
+        }, "text");
+    }
+
 </script>
 
+<!--get-->
+<!--<input type="button" value="Get" onclick="fun();">-->
 
-<input type="button" value="Async" onclick="fun();">
+<!--Post-->
+<input type="button" value="Post" onclick="po();">
+
 <input type="text">
 </body>
 </html>
